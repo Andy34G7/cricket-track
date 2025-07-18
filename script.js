@@ -85,7 +85,6 @@ function Matches_display(data) {
 async function fetch_display(){
     try {
         const data = await fetchLive();
-        console.log(data);
         Matches_display(data);
     }
     catch (error) {
