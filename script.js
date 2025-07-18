@@ -51,26 +51,26 @@ function Matches_display(data) {
                     let team1Score = "";
                     let team2Score = "";
                     if (match.matchScore.team1Score && match.matchScore.team1Score.inngs1) {
-                        team1Score = match.matchScore.team1Score.inngs1.runs + "/" + match.matchScore.team1Score.inngs1.wickets + " (" + match.matchScore.team1Score.inngs1.overs + " overs)";
+                        team1Score = `${match.matchScore.team1Score.inngs1.runs}/${match.matchScore.team1Score.inngs1.wickets} (${match.matchScore.team1Score.inngs1.overs} overs)`;
                     }
                     if (match.matchScore.team2Score && match.matchScore.team2Score.inngs1){
-                        team2Score = match.matchScore.team2Score.inngs1.runs + "/" + match.matchScore.team2Score.inngs1.wickets + " (" + match.matchScore.team2Score.inngs1.overs + " overs)";
+                        team2Score = `${match.matchScore.team2Score.inngs1.runs}/${match.matchScore.team2Score.inngs1.wickets} (${match.matchScore.team2Score.inngs1.overs} overs)`;
                     }
                     if (match.matchScore.team1Score.inngs1.inningsId == 2){
-                        scorestr = matchInfo.team2.teamSName + " " + team2Score + " | " + matchInfo.team1.teamSName + " " + team1Score;
+                        scorestr = `${matchInfo.team2.teamSName} ${team2Score} | ${matchInfo.team1.teamSName} ${team1Score}`
                     }
                     else {
-                        scorestr = matchInfo.team1.teamSName + " " + team1Score + " | " + matchInfo.team2.teamSName + " " + team2Score;
+                        scorestr = `${matchInfo.team1.teamSName} ${team1Score} | ${matchInfo.team2.teamSName} ${team2Score}`
                     }
                     matchscore.textContent = scorestr;
                     matchCard.appendChild(matchscore);
                     
                     const matchDetails = document.createElement('p');
-                    matchDetails.textContent = "Format: " + matchInfo.matchFormat + " | State: " + matchInfo.state;
+                    matchDetails.textContent = `Format: ${matchInfo.matchFormat} | State: ${matchInfo.state}`;
                     matchCard.appendChild(matchDetails);
                     
                     const venueInfo = document.createElement('p');
-                    venueInfo.textContent = "Venue: " + matchInfo.venueInfo.ground + ", " + matchInfo.venueInfo.city;
+                    venueInfo.textContent = `Venue: ${matchInfo.venueInfo.ground}, ${matchInfo.venueInfo.city}`;
                     matchCard.appendChild(venueInfo);
 
                     seriesContainer.appendChild(matchCard);
