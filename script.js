@@ -88,7 +88,13 @@ async function fetch_display(){
         Matches_display(data);
     }
     catch (error) {
-        console.error(error);
+        const container = document.getElementById('match-cont');
+        container.innerHTML = '';
+        const error_msg = document.createElement('h3')
+        error_msg.classList.add('error-text');
+        error_msg.textContent = `Error: ${error}`;
+        error_msg.style.color = 'red';
+        container.appendChild(error_msg);
     }
 }
 fetch_display();
