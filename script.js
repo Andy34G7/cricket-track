@@ -50,17 +50,19 @@ function Matches_display(data) {
                     let scorestr = "";
                     let team1Score = "";
                     let team2Score = "";
-                    if (match.matchScore.team1Score && match.matchScore.team1Score.inngs1) {
-                        team1Score = `${match.matchScore.team1Score.inngs1.runs}/${match.matchScore.team1Score.inngs1.wickets} (${match.matchScore.team1Score.inngs1.overs} overs)`;
-                    }
-                    if (match.matchScore.team2Score && match.matchScore.team2Score.inngs1){
-                        team2Score = `${match.matchScore.team2Score.inngs1.runs}/${match.matchScore.team2Score.inngs1.wickets} (${match.matchScore.team2Score.inngs1.overs} overs)`;
-                    }
-                    if (match.matchScore.team1Score.inngs1.inningsId == 2){
-                        scorestr = `${matchInfo.team2.teamSName} ${team2Score} | ${matchInfo.team1.teamSName} ${team1Score}`
-                    }
-                    else {
-                        scorestr = `${matchInfo.team1.teamSName} ${team1Score} | ${matchInfo.team2.teamSName} ${team2Score}`
+                    if (match.matchscore){
+                        if (match.matchScore.team1Score && match.matchScore.team1Score.inngs1) {
+                            team1Score = `${match.matchScore.team1Score.inngs1.runs}/${match.matchScore.team1Score.inngs1.wickets} (${match.matchScore.team1Score.inngs1.overs} overs)`;
+                        }
+                        if (match.matchScore.team2Score && match.matchScore.team2Score.inngs1){
+                            team2Score = `${match.matchScore.team2Score.inngs1.runs}/${match.matchScore.team2Score.inngs1.wickets} (${match.matchScore.team2Score.inngs1.overs} overs)`;
+                        }
+                        if (match.matchScore.team1Score.inngs1.inningsId == 2){
+                            scorestr = `${matchInfo.team2.teamSName} ${team2Score} | ${matchInfo.team1.teamSName} ${team1Score}`
+                        }
+                        else {
+                            scorestr = `${matchInfo.team1.teamSName} ${team1Score} | ${matchInfo.team2.teamSName} ${team2Score}`
+                        }
                     }
                     matchscore.textContent = scorestr;
                     matchCard.appendChild(matchscore);
@@ -89,7 +91,7 @@ async function fetch_display(){
     }
     catch (error) {
         const container = document.getElementById('match-cont');
-        container.innerHTML = '';
+        // container.innerHTML = '';
         const error_msg = document.createElement('h3')
         error_msg.classList.add('error-text');
         error_msg.textContent = `Error: ${error}`;
