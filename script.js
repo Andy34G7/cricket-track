@@ -9,17 +9,6 @@ const settings_all = {
 	}
 };
 
-const settings_match = {
-	async: true,
-	crossDomain: true,
-	url: 'https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/',
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': 'e7ffbdad2emshc9dc3e52a70e12ep1cf0a7jsn35b695858d83',
-		'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com'
-	}
-};
-
 async function fetchLive(){
     const response = await fetch(settings_all.url, {method: settings_all.method, headers: settings_all.headers})
     if (!response.ok) {
@@ -118,21 +107,8 @@ function RefreshScore(){
     fetch_display();
 }
 
-async function fetch_Match(matchId){
-    const response = await fetch(settings_match.url+`${matchId}`, {method: settings_match.method, headers: settings_match.headers})
-    if (!response.ok) {
-        throw new Error(`Error fetching match data: ${response.statusText}`);
-    }
-    const match_data = await response.json();
-    return match_data;
-}
-
-function display_info(data){
-
-}
-
-function Display_more(matchId){
-    console.log(`Pressed more info button with id ${matchId}`);
+async function Display_more(matchId){
+    window.location.href = `scorecard.html?matchId=${matchId}`;
 }
 
 
