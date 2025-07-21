@@ -436,9 +436,7 @@ async function initScorecard() {
 
     try {
         const data = await fetch_Match(matchId);
-        console.log('Match data:', data);
         const datasc = await fetch_Scorecard(matchId);
-        console.log(`Scorecard:`, datasc);
         display_info(data, datasc);
     } catch (error) {
         console.error('Error fetching data:', error);
