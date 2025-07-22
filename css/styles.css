@@ -1,0 +1,76 @@
+/* General styles */
+body {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #34495e;
+    margin-top: 20px;
+}
+
+/* General Button styles */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer ;
+    font-size: 14px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* DOM Object styles - index.html */ 
+.series-container {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.match-card {
+    background: white;
+    border-radius: 9px;
+    padding: 15px;
+    margin: 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.match-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.match-type {
+    margin: 30px 0;
+}
