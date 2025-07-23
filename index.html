@@ -12,9 +12,14 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Live Cricket Match Tracker</h1>
-        <p>Uses the given API to show match scores.</p>
-        <button onclick="RefreshScore()">Refresh Score</button>
+        <div class="header-container">
+            <div class="title-section">
+                <h1>Live Cricket Match Tracker</h1>
+            </div>
+            <div class="button-section">
+                <button onclick="RefreshScore()">Refresh Score</button>
+            </div>
+        </div>
         <div id="match-cont"></div>
     </body>
 </html>
