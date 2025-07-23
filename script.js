@@ -36,6 +36,10 @@ function Matches_display(data) {
                 const series = document.createElement('h3');
                 series.textContent = seriesMatch.seriesAdWrapper.seriesName;
                 seriesContainer.appendChild(series);
+                
+                const matchGrid = document.createElement('div');
+                matchGrid.classList.add('match-cards-grid');
+                
                 seriesMatch.seriesAdWrapper.matches.forEach(match => {
                     const matchCard = document.createElement('div');
                     matchCard.classList.add('match-card');
@@ -76,8 +80,9 @@ function Matches_display(data) {
                     venueInfo.textContent = `Venue: ${matchInfo.venueInfo.ground}, ${matchInfo.venueInfo.city}`;
                     matchCard.appendChild(venueInfo);
 
-                    seriesContainer.appendChild(matchCard);
+                    matchGrid.appendChild(matchCard);
             })
+            seriesContainer.appendChild(matchGrid);
             typeContainer.appendChild(seriesContainer);
             }
         })

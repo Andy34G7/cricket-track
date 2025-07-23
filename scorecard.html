@@ -7,11 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A live cricket match tracker that displays current match scores">
         <script src="sc-script.js" defer></script> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Match Scorecard</h1>
-        <button onclick="goBack()">Back to Live Matches</button>
-        <div id="scorecard-container"></div>
+        <div class="header-container">
+            <div class="title-section">
+                <h1>Match Scorecard</h1>
+            </div>
+            <div class="button-section">
+                <button onclick="goBack()">Back to Live Matches</button>
+            </div>
+        </div>
         <div id="match_info-container"></div>
+        <div id="scorecard-container"></div>
     </body>
 </html>
